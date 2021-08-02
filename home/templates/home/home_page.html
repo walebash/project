@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+
+{% block title %} Post Your Thoughts {% endblock title %}
+
+{% block content %}
+{% include "home/nav_bar.html" %}
+
+<p> Hello Everybody</p>
+
+<h1> Recent Posts </h1>
+{% for post in post %}
+<div>
+    <p style="border: 1px solid blue;">
+        <h3> {{post.post_title}} </h3>
+        <p> {{post.date_published}} </p>
+        <p style="border: 1px solid black; margin: 25px 50px; background-color: light-blue;">
+        {{post.post_content}}</p>
+        <p> Posted by {{post_username}}</p>
+        <p> Visit profile
+            <a href="#"> {{post.user_profile_link}} </a>
+        </p>
+    
+    </p>
+</div>
+{% endfor %}
+{% endblock content %}
